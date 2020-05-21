@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Contact</title>
+	<link rel="stylesheet" href="styles.css">
+	<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<nav>
+			<a href="index.html">HOME</a>	
+			<a href="cv.html">CV</a>
+			<a href="portfolio.html">PORTFOLIO</a>
+			<a class="contact" href="contact.html">CONTACT</a>
+		</nav>
+	</header>
+	<main>
+		<section class="contact-container container">
+			<h1>Contact me</h1>
+			<form action="mailto:unasimov1256@bths.edu" method="POST" enctype="text/plain">
+				<label for="subject">Subject:</label>
+				<input type="text" name="subject" class="subject"> 
+				<label for="message">Message:</label>
+				<textarea type="text" name="message" id="message"></textarea>
+				<input type="submit" value="Send">
+			</form>
+		</section>
+	</main>
+</body>
+</html>

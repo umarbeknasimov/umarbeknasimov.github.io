@@ -1,0 +1,288 @@
+/* your css here */
+:root {
+    --color1: hsl(182, 20%, 31.4%);
+    --color2: hsl(42, 26.5%, 90.4%);
+    --link-color: hsl(218, 21.3%, 29.4%);
+    --info-margin: 20px;
+}
+
+body {
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-variant-numeric: ordinal;
+    margin: 0;
+    background-color: var(--color2);
+}
+
+.index-container {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 100%;
+    justify-items: center;
+    align-items: center;
+}
+
+
+#picture {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    margin: 2em;
+}
+
+#picture img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+#name {
+    font-size: 30px;
+    color: var(--color1);
+}
+
+
+.cv-section {
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+.caps {
+    font-size: 0.9em;
+}
+
+
+h2.subheading {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    color: var(--color1);
+}
+
+ul.listing {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    list-style: none;
+}
+
+
+nav > a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 1.5em 1em 1em 20px;
+    font-size: 15px;
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--color1);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+a.contact {
+    position: absolute;
+    top: 0.9em;
+    right: 20px;
+    padding: 0.5em 1em;
+    margin: 0;
+    border: 0.1em solid var(--color1);
+}
+
+span#company > a {
+    color: var(--color1);
+}
+
+.date {
+    font-style: italic;
+}
+
+h3 {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.tasks {
+    padding: 0;
+    list-style: none;
+    margin-bottom: 2em;
+}
+
+.tasks li {
+    padding-bottom: 0.5em;
+}
+
+article.app {
+    margin-bottom: 4em;
+}
+section.content {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-areas:
+                        "description picture";
+}
+
+section.description {
+    grid-area: description;
+}
+
+section.description li {
+    margin: 0em 0.5em 0.5em 0em;
+}
+
+h2, h1 {
+    color: var(--color1);
+    font-size: 30px;
+    margin-bottom: 0.5em;
+}
+
+article.app section.media {
+    grid-area: picture;
+    border-radius: 1em;
+    margin-top: 1em;
+}
+
+article.phone section.media {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+article.web img {
+    width: 95%;
+    height: 90%;
+    margin: 2.5%;
+}
+
+article.app img {
+    filter: drop-shadow(0px 0px 10px rgba(0,0,0,.3));
+    object-fit: contain;
+    object-position: 0% 0%;
+}
+
+article.phone img {
+    width: 40%;
+    height: 90%;
+    margin: 2.5%;
+}
+
+section.description ul {
+    margin-bottom: 3em;
+}
+
+
+
+@media (max-width: 900px), only screen and (max-device-width: 900px) {
+    .cv-section {
+        display: block;
+    }
+    
+
+    ul.listing { 
+        padding-left: 0;
+    }
+
+    section.content {
+        display: block;
+    }
+
+    section.description ul {
+        margin-bottom: 0;
+    }
+
+    section.description {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: repeat(2, 50%);
+        grid-template-areas: "features features" 
+                              "tech code";
+        grid-gap: 5%;
+    }
+    section.description div.features {
+        grid-area: features;
+    }
+
+    section.description div.tech {
+        grid-area: tech;
+    }
+
+    section.description div.code {
+        grid-area: code;
+    }
+}
+
+@media (max-width: 600px), only screen and (max-device-width: 600px) {
+    .index-container {
+        display: block;
+    }
+
+    #bio {
+        text-align: center;
+    }
+
+    a.fab:last-child {
+        margin: 0;
+    }
+}
+
+
+.container {
+    margin: var(--info-margin);
+}
+
+form > label {
+    display: block;
+    margin: 1em 0em;
+}
+
+textarea, input.subject {
+    width: 100%;
+}
+
+input[type="submit"] {
+    margin-top: 1em;
+    width: 10em;
+    height: 3em;
+}
+
+a.fab {
+    color: var(--color1);
+    margin-right: 0.75em;
+}
+
+section.description a.fab {
+    margin-left: 1.2em;
+}
+
+@page { 
+    size: letter landscape; 
+    margin: 0.8in 1in;
+}
+
+@media print {
+    body { 
+        font-size: 12px
+    }
+
+    nav {
+        display: none
+    }
+
+    section.media img { 
+        break-inside: avoid-page;
+    }
+
+    article.phone img {
+        width: 30%;
+    }
+
+    section.description {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: 100%;
+        grid-template-areas: "features tech";
+        grid-gap: 5%;
+    }
+
+    div.code {
+        display: none
+    }
+
+}
