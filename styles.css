@@ -3,7 +3,7 @@
     --color1: hsl(182, 20%, 31.4%);
     --color2: hsl(42, 26.5%, 90.4%);
     --link-color: hsl(218, 21.3%, 29.4%);
-    --info-margin: 20px;
+    --info-margin: 53px;
 }
 
 body {
@@ -13,6 +13,7 @@ body {
     font-variant-numeric: ordinal;
     margin: 0;
     background-color: var(--color2);
+    font-size: 18px;
 }
 
 .index-container {
@@ -46,6 +47,10 @@ body {
     grid-template-columns: 30% 70%;
 }
 
+.cv-section h2 {
+    margin-top: 0;
+}
+
 .caps {
     font-size: 0.9em;
 }
@@ -63,12 +68,21 @@ ul.listing {
     list-style: none;
 }
 
+.listing h3 {
+    margin-top: 0;
+}
 
-nav > a {
+nav {
+    margin: 0.5em 2.25em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav a {
     display: inline-block;
     text-decoration: none;
-    padding: 1.5em 1em 1em 20px;
-    font-size: 15px;
+    margin: 1em;
+    font-size: 19px;
     color: black;
 }
 
@@ -79,16 +93,13 @@ a:hover {
 }
 
 a.contact {
-    position: absolute;
-    top: 0.9em;
-    right: 20px;
     padding: 0.5em 1em;
-    margin: 0;
     border: 0.1em solid var(--color1);
 }
 
 span#company > a {
     color: var(--color1);
+    font-weight: bold;
 }
 
 .date {
@@ -96,7 +107,7 @@ span#company > a {
 }
 
 h3 {
-    font-size: 19px;
+    font-size: 22px;
     font-weight: bold;
 }
 
@@ -170,9 +181,30 @@ section.description ul {
 
 
 @media (max-width: 900px), only screen and (max-device-width: 900px) {
+    body {
+        font-size: 15px;
+    }
     .cv-section {
         display: block;
     }
+
+    section.container, div.container, header nav {
+        margin: 10px;
+    }
+
+    nav a {
+        font-size: 14px;
+        margin: 0 2.5em 0 0;
+    }
+
+    header nav {
+        margin: 1em 12px;
+    }
+
+    nav a.contact {
+        margin-right: 0;
+    }
+
     
 
     ul.listing { 
