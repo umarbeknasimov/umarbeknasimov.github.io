@@ -238,6 +238,10 @@ section.description ul {
     section.description div.code {
         grid-area: code;
     }
+
+    form input.subject {
+        width: 75%;
+    }
 }
 
 @media (max-width: 600px), only screen and (max-device-width: 600px) {
@@ -264,8 +268,12 @@ form > label {
     margin: 1em 0em;
 }
 
-textarea, input.subject {
+textarea {
     width: 100%;
+}
+
+input.subject {
+    width: 50%;
 }
 
 input[type="submit"] {
