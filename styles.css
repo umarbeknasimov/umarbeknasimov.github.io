@@ -3,7 +3,9 @@
     --color1: hsl(182, 20%, 31.4%);
     --color2: hsl(42, 26.5%, 90.4%);
     --link-color: hsl(218, 21.3%, 29.4%);
-    --info-margin: 60px;
+    --info-margin: 60px 60px 0 60px;
+    --large: 20px;
+    --extra-large: 30px
 }
 
 body {
@@ -22,6 +24,7 @@ body {
     grid-template-rows: 100%;
     justify-items: center;
     align-items: center;
+    margin-bottom: 0;
 }
 
 
@@ -36,9 +39,13 @@ body {
     border-radius: 50%;
 }
 
-#name {
-    font-size: 30px;
+#bio #name {
+    font-size: var(--extra-large);
     color: var(--color1);
+}
+
+#bio #description {
+    font-size: var(--large);
 }
 
 
@@ -101,10 +108,10 @@ span#company > a {
     color: var(--color1);
     font-weight: bold;
 }
-
+/* 
 .date {
     font-style: italic;
-}
+} */
 
 h3 {
     font-size: 22px;
